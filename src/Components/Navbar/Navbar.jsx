@@ -14,7 +14,6 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
-
     return (
         <div className="navbar">
             <div className="nav-logo">
@@ -54,5 +53,4 @@ const Navbar = () => {
         </div>
     )
 }
-
 export default Navbar;
