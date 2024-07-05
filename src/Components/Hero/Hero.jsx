@@ -8,15 +8,17 @@ const Hero = () => {
     return (
         <div className='hero'>
             <div className="hero-left">
-                <h2>BE FASHIONABLE</h2>
-                <div>
+                <h3>BE FASHIONABLE</h3>
+                {/* <div>
                     <div className="hero-hand-icon">
                         <p>New</p>
                         <img src={hand_icon} alt="" />
                     </div>
                     <p>Collections</p>
                     <p>Update Everyday</p>
-                </div>
+                </div> */}
+                <h2>DEFINE YOUR STYLE TODAY</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</p>
                 <div className="hero-latest-btn">
                     <div>SHOP NOW</div>
                     <img src={arrow_icon} alt="" />
