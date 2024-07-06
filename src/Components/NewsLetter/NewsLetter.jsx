@@ -4,8 +4,8 @@ import './NewsLetter.css'
 const NewsLetter = () => {
     return (
         <div className='newsletter'>
-            <h1>Get Exclusive Offer To Your Email</h1>
-            <p>Subscribe to our newsletter to stay update</p>
+            <h1>DISCOUNT UPTO 79%</h1>
+            <p>And more promotion for your first order via our newsletter</p>
             <div>
                 <input type="email" placeholder='Input your email' />
                 <button>Subcribe</button>

@@ -64,6 +64,10 @@
     justify-content: center;
 }
 
+.hero-right img {
+    width: 80%;
+}
+
 @media(max-width: 1280px) {
     .hero-left {
         padding-left: 100px;
@@ -81,10 +85,6 @@
         color: #bbbbbb;
         font-size: 24px;
         font-style: italic;
-    }
-
-    .hero-hand-icon img {
-        size: 80px;
     }
 
     .hero-latest-btn {
@@ -119,10 +119,6 @@
         font-style: italic;
     }
 
-    .hero-hand-icon img {
-        size: 65px;
-    }
-
     .hero-latest-btn {
         width: 220px;
         height: 50px;
@@ -153,10 +149,6 @@
         font-style: italic;
     }
 
-    .hero-hand-icon img {
-        size: 50px;
-    }
-
     .hero-latest-btn {
         width: 175px;
         height: 40px;
@@ -164,7 +156,7 @@
     }
 
     .hero-right img {
-        size: 300px;
+        size: 100px;
     }
 }
 
@@ -194,10 +186,6 @@
         font-size: 18px;
         font-style: italic;
         text-align: center;
-    }
-
-    .hero-hand-icon img {
-        size: 55px;
     }
 
     .hero-latest-btn {

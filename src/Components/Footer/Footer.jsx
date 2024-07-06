@@ -9,7 +9,7 @@ import whatsapp_icon from '../Assets/whatsapp_icon.png'
 const Footer = () => {
     return (
         <div className='footer'>
-            <div className="footer_logo">
+            <div className="footer-logo">
                 <img src={footer_logo} alt="" />
                 <p>FASHIONISTA</p>
             </div>
@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
             <div className="footer-copyright">
                 <hr />
-                <p>Copyright @ 2024 - All Right Reserved.</p>
+                <p>Copyright © FASHIONISTA 2024 - All Right Reserved.</p>
             </div>
         </div >
     )
