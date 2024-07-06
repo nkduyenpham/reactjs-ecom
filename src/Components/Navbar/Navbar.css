@@ -164,20 +164,11 @@
 
 @media(max-width: 1024px) {
     .navbar {
-        padding: 12px 20px;
+        padding: 15px 5px;
     }
-
-    /* 
-    .nav-logo {
-        width: 40px;
-    }
-
-    .nav-logo p {
-        font-size: 25px;
-    } */
 
     .nav-menu {
-        gap: 25px;
+        gap: 20px;
         font-size: 14px;
     }
 
@@ -197,7 +188,7 @@
     }
 }
 
-@media(max-width: 768px) {
+@media(max-width:800px) {
 
     .navbar {
         display: flex;
