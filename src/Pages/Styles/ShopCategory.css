@@ -79,13 +79,16 @@
     }
 }
 
-@media(max-width: 800px) {
+@media(max-width:800px) {
     .shopcategory-banner {
+        margin: 50px auto;
         width: 95%;
     }
 
     .shopcategory-products {
-        width: 95%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px
     }
 
     .shopcategory-loadmore {
@@ -96,8 +99,13 @@
     }
 }
 
-@media(max-wdith:500px) {
+@media(max-width:500px) {
+    .shopcategory-banner {
+        margin: 50px auto;
+
+    }
+
     .shopcategory-products {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
 }
