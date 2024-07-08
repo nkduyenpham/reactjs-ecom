@@ -11,7 +11,9 @@ const LoginSignup = () => {
                     <input type="email" placeholder='Email address' />
                     <input type="password" placeholder='Password' />
                 </div>
-                <button>Continue</button>
+                <div className='loginsignup-button'>
+                    <button>Continue</button>
+                </div>
                 <p className="loginsignup-login">Already have an account ? <span>Login here</span></p>
                 <div className="loginsignup-agree">
                     <input type="checkbox" name='' id='' />

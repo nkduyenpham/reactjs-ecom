@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useEffect, useState } from "react"
 import all_product from "../Components/Assets/all_product"
 
 export const ShopContext = createContext(null)
@@ -16,7 +16,19 @@ const getDefaultCart = () => {
 const ShopContextProvider = (props) => {
 
     // update state of cart 
-    const [cartItems, setCartItems] = useState(getDefaultCart())
+
+    // const [cartItems, setCartItems] = useState(getDefaultCart())
+
+    // add cartItems into localStorage
+
+    const [cartItems, setCartItems] = useState(() => {
+        const savedCart = localStorage.getItem('cartItems');
+        return savedCart ? JSON.parse(savedCart) : getDefaultCart();
+    });
+
+    useEffect(() => {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }, [cartItems])
 
     const addToCart = (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
@@ -26,6 +38,7 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
     }
+
 
     // update total cart amount in cartItems.jsx || Cart page
 
@@ -50,6 +63,11 @@ const ShopContextProvider = (props) => {
         return totalItem
     }
 
+    const resetCart = () => {
+        setCartItems(getDefaultCart());
+        localStorage.removeItem('cartItems')
+    }
+
     const contextValue = {
         getTotalCartItems,
         getTotalCartAmount,
@@ -57,6 +75,7 @@ const ShopContextProvider = (props) => {
         cartItems,
         addToCart,
         removeFromCart,
+        resetCart
     };
 
 

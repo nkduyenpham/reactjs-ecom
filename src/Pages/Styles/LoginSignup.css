@@ -37,8 +37,14 @@
     font-size: 18px;
 }
 
+.loginsignup-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .loginsignup-container button {
-    width: 580px;
+    width: 200px;
     height: 72px;
     color: white;
     background: #a6c294;

@@ -1,0 +1,303 @@
+.checkout {
+    background: #ebf1e7;
+    padding-top: 100px;
+    height: 80vh;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    grid-template-rows: auto;
+    margin: 20px;
+}
+
+.checkout-items {
+    margin-left: 20px;
+}
+
+.checkout-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.checkout-form h2 {
+    font-size: 30px;
+}
+
+.checkout-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.checkout-form label {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.checkout-form input[type="text"],
+.checkout-form input[type="email"] {
+    height: 50px;
+    width: 100%;
+    padding: 15px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.checkout-form select {
+    height: auto;
+    width: 50%;
+    padding: 15px 15px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-left: 15px;
+}
+
+
+.paypment-method {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkout-form select {
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.checkout-form .placeorder-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-form button {
+
+    height: 50px;
+    width: 50%;
+    color: white;
+    background: #a6c294;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.checkout-form button:hover {
+    background: #8eaf7d;
+}
+
+/* 
+Styling for pop-up thank you  */
+
+.thank-you-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 90px;
+    /* Increased padding for more space */
+    z-index: 1000;
+    /* Ensure it appears above other content */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    /* Increased box shadow for depth */
+    max-width: 80%;
+    text-align: center;
+}
+
+.thank-you-content {
+    padding: 70px;
+}
+
+.thank-you-content h2 {
+    font-size: 45px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.thank-you-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.thank-you-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.thank-you-button {
+    height: 40px;
+    width: 200px;
+    max-width: 100%;
+    color: white;
+    background: #a6c294;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.thank-you-button:hover {
+    background: #8eaf7d;
+}
+
+
+@media (max-width: 1280px) {
+    .checkout-form {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-form label {
+        font-size: 16px;
+    }
+
+    .checkout-form input[type="text"],
+    .checkout-form input[type="email"],
+    .checkout-form select {
+        height: 45px;
+        padding: 10px 10px;
+
+    }
+
+    .checkout-form button {
+        font-size: 16px;
+    }
+
+    .thank-you-popup {
+        padding: 60px;
+    }
+
+    .thank-you-content {
+        padding: 40px;
+    }
+
+    .thank-you-content h2 {
+        font-size: 20px;
+    }
+
+    .thank-you-content p {
+        font-size: 13px;
+    }
+
+    .thank-you-button {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .checkout-form {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .checkout-form h2 {
+        font-size: 20px;
+    }
+
+    .checkout-form label {
+        font-size: 16px;
+    }
+
+    .checkout-form input[type="text"],
+    .checkout-form input[type="email"],
+    .checkout-form select {
+        height: 40px;
+        padding: 5px 10px;
+
+    }
+
+    .checkout-form button {
+        font-size: 14px;
+        width: 60%;
+        height: 60px;
+    }
+
+    .thank-you-popup {
+        padding: 50px;
+    }
+
+    .thank-you-content {
+        padding: 30px;
+    }
+
+}
+
+@media(max-width:800px) {
+
+    .checkout {
+        height: 90vh;
+        margin-top: 50px
+    }
+
+    .checkout-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .checkout-form h2 {
+        font-size: 17px;
+    }
+
+    .checkout-form label {
+        font-size: 14px;
+    }
+
+    .thank-you-popup {
+        max-width: 90%;
+    }
+
+    .thank-you-button {
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .thank-you-popup {
+        padding: 20px;
+    }
+
+    .thank-you-content {
+        padding: 10px;
+    }
+
+    .thank-you-content h2 {
+        font-size: 20px;
+    }
+
+    .thank-you-content p {
+        font-size: 13px;
+    }
+
+    .thank-you-button {
+        font-size: 12px;
+        height: 20px;
+    }
+
+}
