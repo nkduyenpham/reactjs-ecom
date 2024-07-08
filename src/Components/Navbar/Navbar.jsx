@@ -39,8 +39,8 @@ const Navbar = () => {
                         <Link style={{ textDecoration: 'none', color: 'black' }} to="/women">Women</Link>
                         {menu === "women" ? <hr /> : null}
                     </li>
-                    <li onClick={() => { setMenu("kids"); toggleMenu(); }}>
-                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/kids">Kids</Link>
+                    <li onClick={() => { setMenu("kid"); toggleMenu(); }}>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/kid">Kid</Link>
                         {menu === "kids" ? <hr /> : null}
                     </li>
                 </ul>
