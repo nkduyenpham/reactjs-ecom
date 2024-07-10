@@ -17,8 +17,8 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="nav-logo">
-                <img src={logo} alt="cart logo" />
-                <p>FASHIONISTA</p>
+                <Link to="/reactjs-ecom/"><img src={logo} alt="cart logo" />
+                    <p>FASHIONISTA</p></Link>
             </div>
             <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
                 <div className="bar"></div>
@@ -28,7 +28,7 @@ const Navbar = () => {
             <div className={`nav-menu-container ${isMenuOpen ? 'open' : ''}`}>
                 <ul className="nav-menu">
                     <li onClick={() => { setMenu("shop"); toggleMenu(); }}>
-                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/">Shop</Link>
+                        <Link style={{ textDecoration: 'none', color: 'black' }} to="/reactjs-ecom/">Shop</Link>
                         {menu === "shop" ? <hr /> : null}
                     </li>
                     <li onClick={() => { setMenu("men"); toggleMenu(); }}>

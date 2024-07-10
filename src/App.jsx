@@ -62,7 +62,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Shop />} />
+          <Route path="/reactjs-ecom/" element={<Shop />} />
           <Route path="/men" element={<ShopCategory banner={men_banner} category="men" />} />
           <Route path="/women" element={<ShopCategory banner={women_banner} category="women" />} />
           <Route path="/kid" element={<ShopCategory banner={kid_banner} category="kid" />} />
