@@ -17,8 +17,8 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <div className="nav-logo">
-                <Link to="/reactjs-ecom/"><img src={logo} alt="cart logo" />
-                    <p>FASHIONISTA</p></Link>
+                <img src={logo} alt="cart logo" />
+                <Link style={{ textDecoration: 'none', color: 'black', cursor: 'pointer' }} to="/reactjs-ecom/"><p>FASHIONISTA</p></Link>
             </div>
             <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
                 <div className="bar"></div>
