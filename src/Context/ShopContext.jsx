@@ -1,25 +1,18 @@
-import { createContext, useEffect, useState } from "react"
-import all_product from "../Components/Assets/all_product"
+import { createContext, useEffect, useState, useMemo } from "react";
+import PropTypes from "prop-types"; // Importing PropTypes
+import all_product from "../Components/Assets/all_product";
 
-export const ShopContext = createContext(null)
-
-// add to cart function
+export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
-    let cart = {}
+    let cart = {};
     for (let index = 0; index < all_product.length + 1; index++) {
-        cart[index] = 0
+        cart[index] = 0;
     }
-    return cart
-}
+    return cart;
+};
 
-const ShopContextProvider = (props) => {
-
-    // update state of cart 
-
-    // const [cartItems, setCartItems] = useState(getDefaultCart())
-
-    // add cartItems into localStorage
+const ShopContextProvider = ({ children }) => { // Destructuring props
 
     const [cartItems, setCartItems] = useState(() => {
         const savedCart = localStorage.getItem('cartItems');
@@ -28,26 +21,22 @@ const ShopContextProvider = (props) => {
 
     useEffect(() => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }, [cartItems])
+    }, [cartItems]);
 
     const addToCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
-        console.log(cartItems)
-    }
+        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    };
 
     const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
-    }
-
-
-    // update total cart amount in cartItems.jsx || Cart page
+        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    };
 
     const getTotalCartAmount = () => {
-        let totalAmount = 0
+        let totalAmount = 0;
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
-                let itemInfo = all_product.find((product) => product.id === Number(item))
-                totalAmount += itemInfo.new_price * cartItems[item]
+                let itemInfo = all_product.find((product) => product.id === Number(item));
+                totalAmount += itemInfo.new_price * cartItems[item];
             }
         }
         return totalAmount;
@@ -57,33 +46,37 @@ const ShopContextProvider = (props) => {
         let totalItem = 0;
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
-                totalItem += cartItems[item]
+                totalItem += cartItems[item];
             }
         }
-        return totalItem
-    }
+        return totalItem;
+    };
 
     const resetCart = () => {
         setCartItems(getDefaultCart());
-        localStorage.removeItem('cartItems')
-    }
+        localStorage.removeItem('cartItems');
+    };
 
-    const contextValue = {
+    const contextValue = useMemo(() => ({
         getTotalCartItems,
         getTotalCartAmount,
         all_product,
         cartItems,
         addToCart,
         removeFromCart,
-        resetCart
-    };
-
+        resetCart,
+    }), [cartItems]); // Memoize contextValue to avoid unnecessary re-renders
 
     return (
         <ShopContext.Provider value={contextValue}>
-            {props.children}
+            {children} {/* Using destructured children */}
         </ShopContext.Provider>
-    )
+    );
+};
+
+// PropTypes validation
+ShopContextProvider.propTypes = {
+    children: PropTypes.node.isRequired, // Ensure children is passed and is of a valid type
 };
 
 export default ShopContextProvider;
