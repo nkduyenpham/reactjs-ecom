@@ -1,4 +1,3 @@
-import React from 'react'
 import CheckoutItem from '../Components/Checkout/CheckoutItem'
 import CheckoutForm from '../Components/Checkout/CheckoutForm'
 import './Styles/Checkout.css'
